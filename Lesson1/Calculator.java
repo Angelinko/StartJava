@@ -5,9 +5,9 @@ public class Calculator {
 
 		result = -1;
 		
-		a = 15;
-		b = 10;
-		c = '%';
+		a = 2;
+		b = 4;
+		c = '^';
 
 		if (c == '*') {
 			result = a * b;
@@ -19,6 +19,12 @@ public class Calculator {
 			result = a - b;
 		} else if (c == '%') {
 			result = a % b;
+		} else if (c == '^') {
+			int x = a;
+			for ( int i = 1; i != b; i++) {
+				a = a*x;
+			}
+			result = a;
 		}
 
 		if (result >= 0) {
