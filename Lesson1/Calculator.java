@@ -1,34 +1,31 @@
 public class Calculator {
 	public static void main(String[] args) {
-		int a, b, result;
-		char c;
-
-		result = -1;
+		int a = 2;
+		int b = 0;
+		int result = 0;
+		char sign = '^';
 		
-		a = 2;
-		b = 4;
-		c = '^';
-
-		if (c == '*') {
+		if (sign == '*') {
 			result = a * b;
-		} else if (c == '/') {
+		} else if (sign == '/') {
 			result = a / b;
-		} else if (c == '+') {
+		} else if (sign == '+') {
 			result = a + b;
-		} else if (c == '-') {
+		} else if (sign == '-') {
 			result = a - b;
-		} else if (c == '%') {
+		} else if (sign == '%') {
 			result = a % b;
-		} else if (c == '^') {
+		} else if (sign == '^') {
 			int x = a;
-			for ( int i = 1; i != b; i++) {
-				a = a*x;
+			for (int i = 1; i != b; i++) {
+				if (b > 0) {
+					a *= x;
+			} else if (b == 0) {
+				a = 1;
 			}
 			result = a;
+			}
 		}
-
-		if (result >= 0) {
-			System.out.println(result);
-		} 
+		System.out.println(result);
 	}
 }
