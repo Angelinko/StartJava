@@ -16,14 +16,9 @@ public class Calculator {
 		} else if (sign == '%') {
 			result = a % b;
 		} else if (sign == '^') {
-			int x = a;
-			for (int i = 1; i != b; i++) {
-				if (b > 0) {
-					a *= x;
-				} else if (b == 0) {
-					a = 1;
-				}
-			result = a;
+			result = 1;
+			for (int i = 0; i < b; i++) {
+				result *= a;
 			}
 		}
 		System.out.println(result);
