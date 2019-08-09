@@ -6,7 +6,7 @@ public class MyFirstGame {
 		while (trialNumber != guessNumber) {
 			if (trialNumber > guessNumber) {
 				System.out.println("Your number is greate");
-			trialNumber--;
+				trialNumber--;
 			} else {
 				System.out.println("Your number is less");
 				trialNumber++;
