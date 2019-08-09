@@ -21,7 +21,7 @@ public class Calculator {
 				if (b > 0) {
 					a *= x;
 				} else if (b == 0) {
-				a = 1;
+					a = 1;
 				}
 			result = a;
 			}
