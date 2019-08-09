@@ -20,9 +20,9 @@ public class Calculator {
 			for (int i = 1; i != b; i++) {
 				if (b > 0) {
 					a *= x;
-			} else if (b == 0) {
+				} else if (b == 0) {
 				a = 1;
-			}
+				}
 			result = a;
 			}
 		}
