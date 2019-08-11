@@ -1,7 +1,7 @@
 public class MyFirstGame {
 	public static void main(String[] args) {
 		int guessNumber = 61;
-		int trialNumber = 89;
+		int trialNumber = 61;
 
 		while (trialNumber != guessNumber) {
 			if (trialNumber > guessNumber) {
@@ -13,5 +13,6 @@ public class MyFirstGame {
 			}
 			System.out.println(trialNumber);
 		}
+		System.out.println("You guessed!!!");
 	}
 }
