@@ -13,7 +13,6 @@ public class CalculatorTest {
 		System.out.println("Enter character:");
 		String sign = sc.next();
 		calculatorOne.setSign(sign);
-		calculatorOne.setResult();
-		System.out.println("Result " + calculatorOne.getResult());
+		calculatorOne.result();
 	}
 }
