@@ -1,11 +1,11 @@
 public class Calculator {
 	
-		private int firstNumber;
-		private int secondNumber;
-		private int result;
-		private String sign;
+	private int firstNumber;
+	private int secondNumber;
+	private int result;
+	private String sign;
 
-		public int getFirstNumber() {
+	public int getFirstNumber() {
 		return firstNumber;
 	}
 
@@ -34,23 +34,31 @@ public class Calculator {
 	}
 
 	public void setResult() {
-		if (sign.equals("*")) {
+		switch (sign) {
+			case "*":
 			result = firstNumber * secondNumber;
-		} else if (sign.equals("/")) {
+			break;
+			case "/":
 			result = firstNumber / secondNumber;
-		} else if (sign.equals("+")) {
+			break;
+			case "+":
 			result = firstNumber + secondNumber;
-		} else if (sign.equals("-")) {
+			break;
+			case "-":
 			result = firstNumber - secondNumber;
-		} else if (sign.equals("%")) {
+			break;
+			case "%":
 			result = firstNumber % secondNumber;
-		} else if (sign == ("^")) {
+			break;
+			case "^":
 			result = 1;
 			for (int i = 0; i < secondNumber; i++) {
 				result *= firstNumber;
 			}
-		} else {
-			System.out.println("Error");
 		}
+	}
+	public void result() {
+		setResult();
+		System.out.println(result);
 	}
 }
