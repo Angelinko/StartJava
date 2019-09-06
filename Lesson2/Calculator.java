@@ -2,7 +2,6 @@ public class Calculator {
 	
 	private int firstNumber;
 	private int secondNumber;
-	private int result;
 	private String sign;
 
 	public int getFirstNumber() {
@@ -11,10 +10,6 @@ public class Calculator {
 
 	public int getSecondNumber() {
 		return secondNumber;
-	}
-
-	public int getResult() {
-		return result;
 	}
 
 	public String getSign() {
@@ -33,32 +28,30 @@ public class Calculator {
 		this.sign = sign;
 	}
 
-	public void setResult() {
+	public void calculate() {
+		int calculate = 0;
 		switch (sign) {
 			case "*":
-			result = firstNumber * secondNumber;
-			break;
+				calculate = firstNumber * secondNumber;
+				break;
 			case "/":
-			result = firstNumber / secondNumber;
-			break;
+				calculate = firstNumber / secondNumber;
+				break;
 			case "+":
-			result = firstNumber + secondNumber;
-			break;
+				calculate = firstNumber + secondNumber;
+				break;
 			case "-":
-			result = firstNumber - secondNumber;
-			break;
+				calculate = firstNumber - secondNumber;
+				break;
 			case "%":
-			result = firstNumber % secondNumber;
-			break;
+				calculate = firstNumber % secondNumber;
+				break;
 			case "^":
-			result = 1;
+				calculate = 1;
 			for (int i = 0; i < secondNumber; i++) {
-				result *= firstNumber;
+				calculate *= firstNumber;
 			}
 		}
-	}
-	public void result() {
-		setResult();
-		System.out.println(result);
+		System.out.println(calculate);
 	}
 }
