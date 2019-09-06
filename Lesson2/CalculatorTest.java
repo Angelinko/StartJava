@@ -20,7 +20,7 @@ public class CalculatorTest {
 			String sign = sc.next();
 			calculatorOne.setSign(sign);
 
-			calculatorOne.calculate();
+			System.out.println(calculatorOne.calculate());
 			
 			do {
 				System.out.println("Continue? (yes or no)");
