@@ -28,7 +28,7 @@ public class Calculator {
 		this.sign = sign;
 	}
 
-	public void calculate() {
+	public int calculate() {
 		int calculate = 0;
 		switch (sign) {
 			case "*":
@@ -48,10 +48,13 @@ public class Calculator {
 				break;
 			case "^":
 				calculate = 1;
-			for (int i = 0; i < secondNumber; i++) {
-				calculate *= firstNumber;
-			}
+				for (int i = 0; i < secondNumber; i++) {
+					calculate *= firstNumber;
+				}
+				break;
+			default:
+				System.out.println("Error");
 		}
-		System.out.println(calculate);
+		return calculate;
 	}
 }
