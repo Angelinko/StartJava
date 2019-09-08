@@ -9,75 +9,77 @@ public class Jaeger {
 	private int strength;
 	private int armor;
 
-	public Jaeger(String a, String b, String c, double d, double e, int f, int g, int h) {
-		modelName = a;
-		mark = b;
-		origin = c;
-		height = d;
-		weight = e;
-		speed = f;
-		strength = g;
-		armor = h;
+	public Jaeger(String modelName, String mark, String origin, 
+						double height, double weight, int speed,
+							int strength, int armor) {
+		this.modelName = modelName;
+		this.mark = mark;
+		this.origin = origin;
+		this.height = height;
+		this.weight = weight;
+		this.speed = speed;
+		this.strength = strength;
+		this.armor = armor;
 	}
 
 	public String getModelName() {
 		return modelName;
 	}
 
-	public String getMark() {
-		return mark;
-	}
-
-	public String getOrigin() {
-		return origin;
-	}
-
-	public double getHeight() {
-		return height;
-	}
-
-	public double getWeight() {
-		return weight;
-	}
-
-	public int getSpeed() {
-		return speed;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-
-	public int getArmor() {
-		return armor;
-	}
-
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
+	}
+
+	public String getMark() {
+		return mark;
 	}
 
 	public void setMark(String mark) {
 		this.mark = mark;
 	}
 
+	public String getOrigin() {
+		return origin;
+	}
+
 	public void setOrigin(String origin) {
 		this.origin = origin;
+	}
+
+	public double getHeight() {
+		return height;
 	}
 
 	public void setHeight(double height) {
 		this.height = height;
 	}
 
+	public double getWeight() {
+		return weight;
+	}
+
 	public void setWeight(double weight) {
 		this.weight = weight;
+	}
+
+	public int getSpeed() {
+		return speed;
 	}
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 
+	public int getStrength() {
+		return strength;
+	}
+
 	public void setStrength(int strength) {
 		this.strength = strength;
+	}
+
+	public int getArmor() {
+		return armor;
 	}
 
 	public void setArmor(int armor) {
