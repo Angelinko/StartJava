@@ -29,32 +29,26 @@ public class Calculator {
 	}
 
 	public int calculate() {
-		int calculate = 0;
 		switch (sign) {
 			case "*":
-				calculate = firstNumber * secondNumber;
-				break;
+				return firstNumber * secondNumber;
 			case "/":
-				calculate = firstNumber / secondNumber;
-				break;
+				return firstNumber / secondNumber;
 			case "+":
-				calculate = firstNumber + secondNumber;
-				break;
+				return firstNumber + secondNumber;
 			case "-":
-				calculate = firstNumber - secondNumber;
-				break;
+				return firstNumber - secondNumber;
 			case "%":
-				calculate = firstNumber % secondNumber;
-				break;
+				return firstNumber % secondNumber;
 			case "^":
-				calculate = 1;
+				int result = 1;
 				for (int i = 0; i < secondNumber; i++) {
-					calculate *= firstNumber;
+					result *= firstNumber;
 				}
-				break;
+				return result;
 			default:
 				System.out.println("Error");
 		}
-		return calculate;
+		return 0;
 	}
 }
