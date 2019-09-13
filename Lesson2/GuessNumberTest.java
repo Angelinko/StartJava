@@ -7,23 +7,11 @@ public class GuessNumberTest {
 		do {
 			System.out.println("Enter the name of the first player:");
 			String name1 = sc.next();
+		
 			System.out.println("Enter the name of the second player:");
 			String name2 = sc.next();
-			
-			while (GuessNumber.isGuess) {
-				
-			System.out.println("First player guess the number:");
-			int number1 = sc.nextInt();
-			Player playerOne = new Player(name1, number1);
 
-			System.out.println("Second player guess the number:");
-			int number2 = sc.nextInt();
-			Player playerTwo = new Player(name2, number2);
-
-			GuessNumber.number(playerOne);
-			GuessNumber.number(playerTwo);
-			}
-
+			GuessNumber.number(name1, name2);
 			do {
 				System.out.println("Continue? (yes or no)");
 				 answer = sc.next();
