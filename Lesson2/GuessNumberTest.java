@@ -2,9 +2,17 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
 	public static void main(String[] args) {
-		GuessNumber guessNumber = new GuessNumber();
+		
 		Scanner sc = new Scanner(System.in);
 		String answer;
+
+		System.out.println("Enter the name of the first player:");
+		Player playerOne = new Player(sc.next());
+		
+		System.out.println("Enter the name of the second player:");
+		Player playerTwo = new Player(sc.next());
+
+		GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
 
 		do {
 			guessNumber.startGame();
