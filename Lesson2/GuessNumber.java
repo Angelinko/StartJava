@@ -8,7 +8,13 @@ public class GuessNumber {
 	public int random = (int)(Math.random() * 101);
 	public Scanner sc = new Scanner(System.in);
 
-	public void startGame(String name1, String name2) {
+	public void startGame() {
+		System.out.println("Enter the name of the first player:");
+		String name1 = sc.next();
+		
+		System.out.println("Enter the name of the second player:");
+		String name2 = sc.next();
+		
 		while (isGuess) {
 			System.out.println("First player guess the number:");
 			int number1 = sc.nextInt();
