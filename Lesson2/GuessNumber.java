@@ -13,7 +13,7 @@ public class GuessNumber {
 	}
 
 	public void startGame() {
-		do{
+		do {
 			System.out.println("First player guess the number:");
 			playerOne.setNumber(sc.nextInt());
 
@@ -24,6 +24,7 @@ public class GuessNumber {
 				System.out.println(playerOne.getName() + " - Your number is less");	
 			} else {
 				System.out.println(playerOne.getName() + " winner!");
+				break;
 			}
 
 			System.out.println("Second player guess the number:");
@@ -36,7 +37,8 @@ public class GuessNumber {
 				System.out.println(playerTwo.getName() + " - Your number is less");	
 			} else {
 				System.out.println(playerTwo.getName() + " winner!");
-			}
-		}while(playerOne.getNumber() != random && playerTwo.getNumber() != random);
+				break;
+			} 
+		} while(true);
 	}
 }
