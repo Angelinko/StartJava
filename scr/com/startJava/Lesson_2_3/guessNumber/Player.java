@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2_3.guessNumber;
+
 public class Player {
 
 	private String name;

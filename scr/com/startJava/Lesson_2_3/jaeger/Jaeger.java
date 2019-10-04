@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2_3.jaeger;
+
 public class Jaeger {
 
 	private String modelName;
