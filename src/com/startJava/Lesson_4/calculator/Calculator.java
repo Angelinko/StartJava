@@ -5,31 +5,13 @@ public class Calculator {
     private int secondNumber;
     private String sign;
 
-    public int getFirstNumber() {
-        return firstNumber;
-    }
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
-    }
+    public int calculate(String inputLine) {
+        String[] mathematicalExpression = inputLine.split(" ");
+        firstNumber = (Integer.parseInt(mathematicalExpression[0]));
+        secondNumber = (Integer.parseInt(mathematicalExpression[2]));
+        sign = (mathematicalExpression[1]);
 
-    public int getSecondNumber() {
-        return secondNumber;
-    }
-
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-
-    public int calculate() {
         switch (sign) {
             case "*":
                 return Math.multiplyExact(firstNumber, secondNumber);

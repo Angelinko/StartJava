@@ -12,13 +12,8 @@ public class CalculatorMain {
 
             System.out.print("Введите математическое выражение: ");
             String inputLine = sc.nextLine();
-            String[] mathematicalExpression = inputLine.split(" ");
 
-            calculatorOne.setFirstNumber(Integer.parseInt(mathematicalExpression[0]));
-            calculatorOne.setSecondNumber(Integer.parseInt(mathematicalExpression[2]));
-            calculatorOne.setSign(mathematicalExpression[1]);
-
-            System.out.println(calculatorOne.calculate());
+            System.out.println(calculatorOne.calculate(inputLine));
 
             do {
                 System.out.println("Continue? (yes or no)");
