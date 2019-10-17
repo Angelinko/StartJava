@@ -1,7 +1,6 @@
 package com.startJava.Lesson_4.calculator;
 
 public class Calculator {
-
     private int firstNumber;
     private int secondNumber;
     private String sign;
