@@ -63,27 +63,33 @@ public class GuessNumber {
                     break;
                 }
             }
-
-            if (count1 == 10) {
-                System.out.println("At " + playerOne.getName() + " attempts ended");
-            }
-
-            if (count2 == 10) {
-                System.out.println("At " + playerTwo.getName() + " attempts ended");
-            }
-
-            System.out.print("First player numbers: ");
-            for (int i = 0; i < count1; i++) {
-                System.out.print(numbers1[i] + " ");
-            }
-
-            System.out.println();
-            System.out.print("Second player numbers: ");
-            for (int i = 0; i < count2; i++) {
-                System.out.print(numbers2[i] + " ");
-            }
-            System.out.println();
+            playerCheck();
+            playerNumberOutput(numbers1, numbers2);
             break;
         } while(true);
     }
+    public void playerCheck () {
+        if (count1 == 10) {
+            System.out.println("At " + playerOne.getName() + " attempts ended");
+        }
+
+        if (count2 == 10) {
+            System.out.println("At " + playerTwo.getName() + " attempts ended");
+        }
+    }
+
+    public void playerNumberOutput(int[] numbers1, int[] numbers2) {
+        System.out.print("First player numbers: ");
+        for (int i = 0; i < count1; i++) {
+            System.out.print(numbers1[i] + " ");
+        }
+
+        System.out.println();
+        System.out.print("Second player numbers: ");
+        for (int i = 0; i < count2; i++) {
+            System.out.print(numbers2[i] + " ");
+        }
+        System.out.println();
+    }
+
 }
