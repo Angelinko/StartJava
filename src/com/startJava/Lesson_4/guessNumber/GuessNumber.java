@@ -18,8 +18,8 @@ public class GuessNumber {
 
     public void startGame() {
         int random = (int)(Math.random() * 101);
-        int[] numbers1 = playerOne.getArrayNumbers();
-        int[] numbers2 =  playerTwo.getArrayNumbers();
+        int[] numbers1 = playerOne.getSavingNumbers();
+        int[] numbers2 =  playerTwo.getSavingNumbers();
 
         Arrays.fill(numbers1, 0, count1, 0);
         Arrays.fill(numbers2, 0, count2, 0);
@@ -37,11 +37,12 @@ public class GuessNumber {
                 int playerNumberOne = playerOne.getNumber();
                 if (playerNumberOne > random) {
                     System.out.println(playerOne.getName() + " - Your number is greate");
+                    playerOne.setSavingNumbers(numbers1);
                 } else if (playerNumberOne < random) {
                     System.out.println(playerOne.getName() + " - Your number is less");
+                    playerOne.setSavingNumbers(numbers1);
                 } else {
                     System.out.println(playerOne.getName() + " winner!");
-                    playerOne.setArrayNumbers(numbers1);
                     System.out.println("Player " + playerOne.getName() + " guess number " + random + " c " + count1 + " attempts");
                     break;
                 }
@@ -54,11 +55,12 @@ public class GuessNumber {
                 int playerNumberTwo = playerTwo.getNumber();
                 if (playerNumberTwo > random) {
                     System.out.println(playerTwo.getName() + " - Your number is greate");
+                    playerTwo.setSavingNumbers(numbers2);
                 } else if (playerNumberTwo < random) {
                     System.out.println(playerTwo.getName() + " - Your number is less");
+                    playerTwo.setSavingNumbers(numbers2);
                 } else {
                     System.out.println(playerTwo.getName() + " winner!");
-                    playerTwo.setArrayNumbers(numbers2);
                     System.out.println("Player " + playerTwo.getName() + " guess number " + random + " c " + count2 + " attempts");
                     break;
                 }
@@ -80,16 +82,13 @@ public class GuessNumber {
 
     public void playerNumberOutput(int[] numbers1, int[] numbers2) {
         System.out.print("First player numbers: ");
-        for (int i = 0; i < count1; i++) {
-            System.out.print(numbers1[i] + " ");
-        }
+        int[] numbers1Copy = Arrays.copyOf(playerOne.getSavingNumbers(),count1);
+        System.out.print(Arrays.toString(numbers1Copy) + " ");
 
         System.out.println();
         System.out.print("Second player numbers: ");
-        for (int i = 0; i < count2; i++) {
-            System.out.print(numbers2[i] + " ");
-        }
+        int[] numbers2Copy = Arrays.copyOf(playerTwo.getSavingNumbers(),count2);
+        System.out.print(Arrays.toString(numbers2Copy) + " ");
         System.out.println();
     }
-
 }

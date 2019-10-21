@@ -3,7 +3,7 @@ package com.startJava.Lesson_4.guessNumber;
 public class Player {
     private String name;
     private int number;
-    private int[] arrayNumbers = new int[10];
+    private int[] savingNumbers = new int[10];
 
     public Player(String name) {
         this.name = name;
@@ -13,12 +13,14 @@ public class Player {
         return name;
     }
 
-    public int[] getArrayNumbers() {
-        return arrayNumbers;
+    public int[] getSavingNumbers() {
+        return savingNumbers;
     }
 
-    public void setArrayNumbers(int[] arrayNumbers) {
-        this.arrayNumbers = arrayNumbers;
+    public void setSavingNumbers(int[] savingNumbers) {
+        for (int i = 0; i < savingNumbers.length; i++) {
+            this.savingNumbers = savingNumbers;
+        }
     }
 
     public void setName(String name) {
