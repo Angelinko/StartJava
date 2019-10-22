@@ -8,7 +8,7 @@ public class GuessNumber {
     private Player playerTwo;
     public Scanner sc = new Scanner(System.in);
 
-   private int count1;
+    private int count1;
     private int count2;
 
     public GuessNumber(Player playerOne, Player playerTwo){
@@ -18,11 +18,11 @@ public class GuessNumber {
 
     public void startGame() {
         int random = (int)(Math.random() * 101);
-        int[] numbers1 = playerOne.getSavingNumbers();
-        int[] numbers2 =  playerTwo.getSavingNumbers();
+        int numbers1 = 0;
+        int numbers2 = 0;
 
-        Arrays.fill(numbers1, 0, count1, 0);
-        Arrays.fill(numbers2, 0, count2, 0);
+//        Arrays.fill(numbers1, 0, count1, 0);
+//        Arrays.fill(numbers2, 0, count2, 0);
         count1 = 0;
         count2 = 0;
 
@@ -31,16 +31,15 @@ public class GuessNumber {
             for (int i = 0; i < 10; i++) {
                 System.out.println("First player guess the number:");
                 playerOne.setNumber(sc.nextInt());
-                numbers1[i] = playerOne.getNumber();
+                numbers1 = playerOne.getNumber();
+                playerOne.setSavingNumbers(numbers1, count1);
                 count1++;
 
-                int playerNumberOne = playerOne.getNumber();
-                if (playerNumberOne > random) {
+//                int playerNumberOne = playerOne.getNumber();
+                if (numbers1 > random) {
                     System.out.println(playerOne.getName() + " - Your number is greate");
-                    playerOne.setSavingNumbers(numbers1);
-                } else if (playerNumberOne < random) {
+                } else if (numbers1 < random) {
                     System.out.println(playerOne.getName() + " - Your number is less");
-                    playerOne.setSavingNumbers(numbers1);
                 } else {
                     System.out.println(playerOne.getName() + " winner!");
                     System.out.println("Player " + playerOne.getName() + " guess number " + random + " c " + count1 + " attempts");
@@ -49,16 +48,15 @@ public class GuessNumber {
 
                 System.out.println("Second player guess the number:");
                 playerTwo.setNumber(sc.nextInt());
-                numbers2[i] = playerTwo.getNumber();
+                numbers2 = playerTwo.getNumber();
+                playerTwo.setSavingNumbers(numbers2, count2);
                 count2++;
 
-                int playerNumberTwo = playerTwo.getNumber();
-                if (playerNumberTwo > random) {
+//                int playerNumberTwo = playerTwo.getNumber();
+                if (numbers2 > random) {
                     System.out.println(playerTwo.getName() + " - Your number is greate");
-                    playerTwo.setSavingNumbers(numbers2);
-                } else if (playerNumberTwo < random) {
+                } else if (numbers2 < random) {
                     System.out.println(playerTwo.getName() + " - Your number is less");
-                    playerTwo.setSavingNumbers(numbers2);
                 } else {
                     System.out.println(playerTwo.getName() + " winner!");
                     System.out.println("Player " + playerTwo.getName() + " guess number " + random + " c " + count2 + " attempts");
@@ -66,7 +64,7 @@ public class GuessNumber {
                 }
             }
             playerCheck();
-            playerNumberOutput(numbers1, numbers2);
+            playerNumberOutput();
             break;
         } while(true);
     }
@@ -80,14 +78,14 @@ public class GuessNumber {
         }
     }
 
-    public void playerNumberOutput(int[] numbers1, int[] numbers2) {
+    public void playerNumberOutput() {
         System.out.print("First player numbers: ");
-        int[] numbers1Copy = Arrays.copyOf(playerOne.getSavingNumbers(),count1);
+        int[] numbers1Copy = playerOne.getSavingNumbers(count1);
         System.out.print(Arrays.toString(numbers1Copy) + " ");
 
         System.out.println();
         System.out.print("Second player numbers: ");
-        int[] numbers2Copy = Arrays.copyOf(playerTwo.getSavingNumbers(),count2);
+        int[] numbers2Copy = playerTwo.getSavingNumbers(count2);
         System.out.print(Arrays.toString(numbers2Copy) + " ");
         System.out.println();
     }

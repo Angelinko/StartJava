@@ -1,5 +1,7 @@
 package com.startJava.Lesson_4.guessNumber;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int number;
@@ -13,14 +15,12 @@ public class Player {
         return name;
     }
 
-    public int[] getSavingNumbers() {
-        return savingNumbers;
+    public int[] getSavingNumbers(int count) {
+        return Arrays.copyOf(savingNumbers, count);
     }
 
-    public void setSavingNumbers(int[] savingNumbers) {
-        for (int i = 0; i < savingNumbers.length; i++) {
-            this.savingNumbers = savingNumbers;
-        }
+    public void setSavingNumbers(int savingNumbers, int count) {
+        this.savingNumbers[count] = savingNumbers;
     }
 
     public void setName(String name) {
