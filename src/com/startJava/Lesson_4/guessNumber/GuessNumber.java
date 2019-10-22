@@ -21,8 +21,8 @@ public class GuessNumber {
         int numbers1 = 0;
         int numbers2 = 0;
 
-//        Arrays.fill(numbers1, 0, count1, 0);
-//        Arrays.fill(numbers2, 0, count2, 0);
+        playerOne.zeroing(count1);
+        playerTwo.zeroing(count2);
         count1 = 0;
         count2 = 0;
 
@@ -35,7 +35,6 @@ public class GuessNumber {
                 playerOne.setSavingNumbers(numbers1, count1);
                 count1++;
 
-//                int playerNumberOne = playerOne.getNumber();
                 if (numbers1 > random) {
                     System.out.println(playerOne.getName() + " - Your number is greate");
                 } else if (numbers1 < random) {
