@@ -5,10 +5,23 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int number;
+    private int count = 0;
     private int[] savingNumbers = new int[10];
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void addCount() {
+        count++;
     }
 
     public String getName() {
@@ -35,7 +48,7 @@ public class Player {
         this.number = number;
     }
 
-    public void zeroing (int count) {
+    public void zeroing(int count) {
         Arrays.fill(savingNumbers, 0, count, 0);
     }
 }
