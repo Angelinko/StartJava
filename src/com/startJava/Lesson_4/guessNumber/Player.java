@@ -31,11 +31,12 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+
     public int[] getEnteredNumbers() {
         return Arrays.copyOf(enteredNumbers, attempt);
     }
 
-    public void setEnteredNumbers(int enteredNumbers) {
+    public void addEnteredNumbers(int enteredNumbers) {
         this.enteredNumbers[attempt] = enteredNumbers;
     }
 

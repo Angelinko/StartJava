@@ -7,7 +7,7 @@ public class GuessNumber {
     private Player playerOne;
     private Player playerTwo;
     private int random;
-    public Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public GuessNumber(Player playerOne, Player playerTwo){
         this.playerOne = playerOne;
@@ -15,41 +15,44 @@ public class GuessNumber {
     }
 
     public void startGame() {
-        random = (int)(Math.random() * 101);
+        setUp();
 
-        playerOne.zeroing();
-        playerTwo.zeroing();
-        playerOne.setAttempt(0);
-        playerTwo.setAttempt(0);
-
-        do {
+        while(true) {
             System.out.println("You have 10 attempts");
             for (int i = 0; i < 10; i++) {
-                takeNumbers(playerOne);
+                inputNumbers(playerOne);
                 if (compare(playerOne, random)) {
                     break;
                 }
-                takeNumbers(playerTwo);
+                inputNumbers(playerTwo);
                 if (compare(playerTwo, random)) {
                     break;
                 }
             }
             playerCheck(playerOne);
             playerCheck(playerTwo);
-            playerNumberOutput(playerOne);
-            playerNumberOutput(playerTwo);
+            showEnteredNumbers(playerOne);
+            showEnteredNumbers(playerTwo);
             break;
-        } while(true);
+        }
+    }
+    private void setUp() {
+        random = (int)(Math.random() * 101);
+
+        playerOne.zeroing();
+        playerTwo.zeroing();
+        playerOne.setAttempt(0);
+        playerTwo.setAttempt(0);
     }
 
-    public void takeNumbers(Player player) {
+    private void inputNumbers(Player player) {
         System.out.println(player.getName() + " guess the number:");
         player.setNumber(sc.nextInt());
-        player.setEnteredNumbers(player.getNumber());
+        player.addEnteredNumbers(player.getNumber());
         player.incAttempt();
     }
 
-    public boolean compare(Player player, int random) {
+    private boolean compare(Player player, int random) {
         if (player.getNumber() > random) {
             System.out.println(playerOne.getName() + " - Your number is greater");
         } else if (player.getNumber() < random) {
@@ -62,16 +65,16 @@ public class GuessNumber {
         return false;
     }
 
-    public void playerCheck(Player player) {
+    private void playerCheck(Player player) {
         if (player.getAttempt() == 10) {
             System.out.println("At " + player.getName() + " attempts ended");
         }
     }
 
-    public void playerNumberOutput(Player player) {
+    private void showEnteredNumbers(Player player) {
         System.out.print(player.getName() + " player numbers: ");
-        int[] numbersCopy = player.getEnteredNumbers();
-        System.out.print(Arrays.toString(numbersCopy) + " ");
+        int[] enteredNumbers = player.getEnteredNumbers();
+        System.out.print(Arrays.toString(enteredNumbers));
         System.out.println();
     }
 }
