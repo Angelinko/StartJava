@@ -17,24 +17,22 @@ public class GuessNumber {
     public void startGame() {
         setUp();
 
-        while(true) {
-            System.out.println("You have 10 attempts");
-            for (int i = 0; i < 10; i++) {
-                inputNumbers(playerOne);
-                if (compare(playerOne, random)) {
-                    break;
-                }
-                inputNumbers(playerTwo);
-                if (compare(playerTwo, random)) {
-                    break;
-                }
+        System.out.println("You have 10 attempts");
+        for (int i = 0; i < 10; i++) {
+            inputNumber(playerOne);
+            if (compare(playerOne, random)) {
+                break;
             }
-            playerCheck(playerOne);
-            playerCheck(playerTwo);
-            showEnteredNumbers(playerOne);
-            showEnteredNumbers(playerTwo);
-            break;
+            inputNumber(playerTwo);
+            if (compare(playerTwo, random)) {
+                break;
+            }
         }
+
+        playerCheck(playerOne);
+        playerCheck(playerTwo);
+        showEnteredNumbers(playerOne);
+        showEnteredNumbers(playerTwo);
     }
     private void setUp() {
         random = (int)(Math.random() * 101);
@@ -45,10 +43,10 @@ public class GuessNumber {
         playerTwo.setAttempt(0);
     }
 
-    private void inputNumbers(Player player) {
+    private void inputNumber(Player player) {
         System.out.println(player.getName() + " guess the number:");
         player.setNumber(sc.nextInt());
-        player.addEnteredNumbers(player.getNumber());
+        player.addEnteredNumber(player.getNumber());
         player.incAttempt();
     }
 
@@ -73,8 +71,8 @@ public class GuessNumber {
 
     private void showEnteredNumbers(Player player) {
         System.out.print(player.getName() + " player numbers: ");
-        int[] enteredNumbers = player.getEnteredNumbers();
-        System.out.print(Arrays.toString(enteredNumbers));
+        int[] enteredNumber = player.getEnteredNumber();
+        System.out.print(Arrays.toString(enteredNumber));
         System.out.println();
     }
 }

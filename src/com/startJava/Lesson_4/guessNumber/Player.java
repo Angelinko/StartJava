@@ -6,7 +6,7 @@ public class Player {
     private String name;
     private int number;
     private int attempt = 0;
-    private int[] enteredNumbers = new int[10];
+    private int[] enteredNumber = new int[10];
 
     public Player(String name) {
         this.name = name;
@@ -32,12 +32,12 @@ public class Player {
         this.name = name;
     }
 
-    public int[] getEnteredNumbers() {
-        return Arrays.copyOf(enteredNumbers, attempt);
+    public int[] getEnteredNumber() {
+        return Arrays.copyOf(enteredNumber, attempt);
     }
 
-    public void addEnteredNumbers(int enteredNumbers) {
-        this.enteredNumbers[attempt] = enteredNumbers;
+    public void addEnteredNumber(int enteredNumber) {
+        this.enteredNumber[attempt] = enteredNumber;
     }
 
     public int getNumber() {
@@ -49,6 +49,6 @@ public class Player {
     }
 
     public void zeroing() {
-        Arrays.fill(enteredNumbers, 0, attempt, 0);
+        Arrays.fill(enteredNumber, 0, attempt, 0);
     }
 }
